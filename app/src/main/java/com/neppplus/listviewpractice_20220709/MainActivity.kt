@@ -2,6 +2,7 @@ package com.neppplus.listviewpractice_20220709
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.neppplus.listviewpractice_20220709.adapters.StudentListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -33,5 +34,16 @@ class MainActivity : AppCompatActivity() {
         mStudentListAdapter = StudentListAdapter(this, R.layout.student_list_item, mStudentList)
 //        액티비티 화면의 listView 태그와 adapter를 연결
         mainListView.adapter = mStudentListAdapter
+
+//        리스트뷰 한줄에 대한 클릭 이벤트 처리
+        mainListView.setOnItemClickListener { adapterView, view, position, l ->
+            Toast.makeText(this, "${position}번째 아이템입니다.", Toast.LENGTH_SHORT).show()
+        }
+        
+//        리스트뷰 한줄에 대한 롱클릭 이벤트 처리
+        mainListView.setOnItemLongClickListener { adapterView, view, i, l ->
+            Toast.makeText(this, "${i}번째 아이템 롱클릭 이벤트", Toast.LENGTH_SHORT).show()
+            return@setOnItemLongClickListener(true)
+        }
     }
 }
