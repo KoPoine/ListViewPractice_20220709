@@ -1,5 +1,6 @@
 package com.neppplus.listviewpractice_20220709
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -37,7 +38,8 @@ class MainActivity : AppCompatActivity() {
 
 //        리스트뷰 한줄에 대한 클릭 이벤트 처리
         mainListView.setOnItemClickListener { adapterView, view, position, l ->
-            Toast.makeText(this, "${position}번째 아이템입니다.", Toast.LENGTH_SHORT).show()
+            val myIntent = Intent(this, ProfileActivity::class.java)
+            startActivity(myIntent)
         }
         
 //        리스트뷰 한줄에 대한 롱클릭 이벤트 처리
