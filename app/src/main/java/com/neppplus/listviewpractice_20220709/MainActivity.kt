@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
+//    ArrayList로 목록 공간을 만들어주고
     val mStudentList = ArrayList<StudentData>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 //        학생 데이터 (더미 데이터 생성)
+//        StudentData(~~~)라는 학생 데이터 객체들을 생성
+//        ArrayList에 추가(mStudentList.add)
         mStudentList.add(StudentData("김민철",1990,"서울시 서대문구"))
         mStudentList.add(StudentData("김민철2",1990,"서울시 서대문구"))
         mStudentList.add(StudentData("김민철3",1990,"서울시 서대문구"))
