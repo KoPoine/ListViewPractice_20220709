@@ -5,4 +5,10 @@ class StudentData (
     val birthYear : Int,
     val address : String,
         ) {
+
+    fun getKoreanAge () : Int {
+        val koreanAge = 2022 - birthYear + 1
+        return koreanAge
+    }
+
 }

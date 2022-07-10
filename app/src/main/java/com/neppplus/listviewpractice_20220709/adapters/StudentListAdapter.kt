@@ -28,8 +28,9 @@ class StudentListAdapter(
 
 //        mList[position] => mList의 position번째 있는 StudentData
         nameTxt.text = mList[position].name
+//        ageTxt.text = mList[position].birthYear.toString()
 //        도전과제 => String을 가공(${}활용) => 나이부분의 값이 (~~세) 로 표시되도록 가공
-        ageTxt.text = mList[position].birthYear.toString()
+        ageTxt.text = "(${mList[position].getKoreanAge()}세)"
         addressTxt.text = mList[position].address
 
         return row
